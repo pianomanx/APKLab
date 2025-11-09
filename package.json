@@ -224,7 +224,7 @@
         "clean": "git clean -Xdf -e !node_modules -e '!node_modules/**/*' -e !.vscode-test -e '!.vscode-test/**/*'",
         "pretest": "tsc -p ./",
         "test": "node ./out/test/runTest.js",
-        "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+        "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --external:glob --format=cjs --platform=node",
         "watch": "yarn esbuild-base --sourcemap --watch",
         "vscode:prepublish": "yarn clean && yarn esbuild-base --minify",
         "package": "vsce package"
